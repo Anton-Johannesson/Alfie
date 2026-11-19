@@ -1,0 +1,28 @@
+.map-toolbar { gap: 10px; align-items: center; }
+.map-tabs { gap: 2px; flex-wrap: wrap; }
+.map-tabs button.tool-button { padding: 6px 8px; color: #8995a7; border: 1px solid transparent; }
+.map-tabs button.tool-button.active-tool { color: #d6e2ff; background: #243552; border-color: #344d77; }
+.map-toolbar-right { display: flex; align-items: center; justify-content: flex-end; gap: 9px; }
+.map-toolbar-right select, .reset-button { border: 1px solid #303a4a; border-radius: 5px; padding: 6px 7px; background: #171d27; color: #aeb9c9; font: 9px var(--sans); }
+.reset-button { cursor: pointer; }
+.reset-button:hover { border-color: #537fcf; color: #d1deff; }
+.reset-button:disabled { opacity: .4; cursor: default; }
+.floorplan-wrap svg { touch-action: none; }
+.ap-marker { cursor: grab; }
+.ap-marker:active { cursor: grabbing; }
+#floorplan.adding-ap { cursor: crosshair; }
+#floorplan.drawing-wall { cursor: crosshair; }
+.map-instructions { color: #8794a8; }
+.save-error { color: #d49595; }
+.room-shape { cursor: pointer; }
+.room-shape rect { fill: #152033; fill-opacity: .28; stroke: #8198bd; stroke-width: 2; }
+.room-shape.selected-room rect { stroke: #76a3ff; stroke-width: 3; }
+.room-shape text { fill: #b8c5db; font: 8px var(--mono); letter-spacing: .7px; pointer-events: none; }
+.room-preview { fill: #548cff; fill-opacity: .15; stroke: #9abaff; stroke-width: 2; stroke-dasharray: 6 4; pointer-events: none; }
+.empty-map-hint { fill: #78879c; font: 9px var(--mono); letter-spacing: .5px; pointer-events: none; }
+@media (max-width: 720px) {
+  .map-toolbar { align-items: flex-start; flex-wrap: wrap; }
+  .map-toolbar-right { width: 100%; justify-content: space-between; }
+  .map-tabs button.tool-button { padding: 6px; font-size: 8px; }
+  .map-instructions { display: none; }
+}

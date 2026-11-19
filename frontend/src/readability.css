@@ -1,0 +1,86 @@
+body { font-size: 15px; }
+.side-label, .panel-kicker, .eyebrow { font-size: 10px; }
+.nav-item { font-size: 13px; height: 43px; }
+.brand-caption { font-size: 9px; }
+.connection-card strong, .profile strong { font-size: 12px; }
+.connection-card small, .profile small { font-size: 11px; }
+.topbar { height: 70px; }
+.breadcrumb { font-size: 12px; }
+.page-heading { padding-top: 37px; padding-bottom: 27px; }
+h1 { font-size: 31px; }
+.page-heading p { font-size: 14px; }
+.button { height: 42px; padding-left: 17px; padding-right: 17px; font-size: 13px; }
+.metric-card { min-height: 137px; padding: 18px 19px 15px; }
+.metric-top { font-size: 10px; }
+.metric-value strong { font-size: 31px; }
+.metric-value span { font-size: 12px; }
+.metric-foot { font-size: 11px; }
+.content-grid, .bottom-grid { gap: 17px; }
+.panel { padding: 21px 22px; }
+.panel-kicker { margin-bottom: 6px; }
+h2 { font-size: 17px; }
+.map-tabs button { padding: 7px 11px; font-size: 11px; }
+.map-tabs button.tool-button { padding: 7px 9px; }
+.map-toolbar-right select, .reset-button { padding: 8px 9px; font-size: 11px; }
+.approx-label { font-size: 9px; }
+.map-legend { padding: 8px 10px; gap: 11px; font-size: 10px; }
+.map-footer { font-size: 11px; padding-top: 13px; }
+.range-select { font-size: 11px; padding: 7px 9px; }
+.score-copy strong { font-size: 14px; }
+.score-copy > span { font-size: 12px; }
+.score-copy small { font-size: 10px; }
+.chart-heading { margin-top: 18px; }
+.chart-heading > span:first-child { font-size: 10px; }
+.chart-value { font-size: 11px; }
+.chart-value b { font-size: 13px; }
+.chart-area { height: 125px; }
+.chart-x { font-size: 9px; }
+.insight-note { padding: 11px 12px; margin-top: 17px; }
+.insight-note p, .insight-note p strong { font-size: 11px; }
+.device-row, .ap-row { min-height: 49px; }
+.device-name strong, .ap-row strong { font-size: 12px; }
+.device-name small, .ap-row small { font-size: 10px; }
+.device-status, .ap-health { font-size: 10px; }
+.device-speed b { font-size: 12px; }
+.device-speed small, .device-footnote { font-size: 9px; }
+.page-footer { font-size: 9px; }
+.pdf-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 10px 0; padding: 9px 11px; border: 1px solid #293242; border-radius: 7px; background: #141a24; }
+.pdf-button, .pdf-remove, .pdf-controls button { border: 1px solid #35445e; border-radius: 5px; background: #1b2940; color: #bbceef; font: 11px var(--sans); cursor: pointer; }
+.pdf-button { padding: 8px 11px; }
+.pdf-action { padding: 5px 8px !important; width: auto !important; font-size: 10px !important; }
+.setting-scale { cursor: crosshair; }
+.cropping-pdf { cursor: crosshair; }
+.pdf-crop-selection { fill: #548cff; fill-opacity: .2; stroke: #a9c3ff; stroke-width: 2; stroke-dasharray: 7 4; }
+.pdf-controls #pdf-crop.active-tool { border-color: #6794ee; color: #e0eaff; background: #223453; }
+.pdf-button:hover, .pdf-remove:hover, .pdf-controls button:hover:not(:disabled) { border-color: #6794ee; color: #e0eaff; }
+.pdf-name { flex: 1; min-width: 165px; overflow: hidden; color: #8694aa; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.pdf-controls { display: flex; align-items: center; gap: 7px; color: #a6b2c5; font-size: 10px; }
+.pdf-controls[hidden] { display: none !important; }
+.pdf-controls button { width: 27px; height: 27px; padding: 0; font-size: 16px; }
+.pdf-controls button:disabled { opacity: .4; cursor: default; }
+.pdf-controls label { color: #8794a8; }
+.pdf-controls input[type="range"] { width: 75px; accent-color: #6095ff; }
+.pdf-remove { padding: 6px 8px; background: #171d27; }
+.map-toolbar-right #tool-scale.active-tool { border-color: #6794ee; color: #e0eaff; background: #223453; }
+@media (max-width: 1100px) {
+  .panel { padding: 19px; }
+  .metric-card { padding: 16px; }
+}
+@media (max-width: 720px) {
+  body { font-size: 14px; }
+  .topbar { height: 59px; }
+  .page-heading { padding-top: 26px; padding-bottom: 19px; }
+  h1 { font-size: 23px; }
+  .page-heading p { font-size: 12px; }
+  .metric-card { min-height: 122px; padding: 13px; }
+  .metric-top { font-size: 9px; }
+  .metric-value strong { font-size: 26px; }
+  .metric-value span, .metric-foot { font-size: 10px; }
+  .panel { padding: 15px 13px; }
+  h2 { font-size: 16px; }
+  .pdf-toolbar { gap: 7px; }
+  .pdf-name { order: 2; flex-basis: 100%; }
+  .pdf-controls { flex-wrap: wrap; }
+  .pdf-controls input[type="range"] { width: 55px; }
+  .map-toolbar-right { gap: 6px; }
+}
