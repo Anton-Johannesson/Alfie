@@ -1,0 +1,103 @@
+:root {
+  color-scheme: dark;
+  --ink: #e7ebf3;
+  --muted: #8993a4;
+  --line: #252c39;
+  --paper: #11151e;
+  --canvas: #0b0e14;
+  --green: #4d8bff;
+  --deep: #080a0f;
+  --mint: #18243a;
+}
+
+body { background: #0b0e14; color: #e7ebf3; }
+.sidebar, .panel, .metric-card { background: #11151e; border-color: #252c39; box-shadow: 0 1px 3px #0004; }
+.sidebar { background: #0e1219; }
+.brand, h1, h2, .metric-value strong, .score-ring strong { color: #edf1f8; }
+.brand-mark { color: #dce6ff; }
+.brand-mark span, h1 em { color: #6395ff; }
+.brand-caption, .side-label, .panel-kicker, .eyebrow { color: #788395; }
+.nav-item { color: #929cad; }
+.nav-item:hover, .nav-item.active { background: #18243a; color: #9bbaff; }
+.nav-icon, .active .nav-icon { color: #80a9ff; }
+.nav-count, .connection-card, .range-select, .heading-count { background: #141a24; border-color: #2a3342; color: #a3afc1; }
+.connection-card strong, .profile strong, .device-name strong, .ap-row strong { color: #dbe2ed; }
+.connection-card small, .profile small, .device-name small, .ap-row small { color: #7f8b9d; }
+.profile { border-color: #252c39; }
+.avatar { background: #1b2a45; color: #a9c3ff; }
+.main-content { color: #d9e0eb; }
+.topbar { border-color: #252c39; }
+.breadcrumb { color: #788395; }
+.breadcrumb strong { color: #c2cad7; }
+.demo-pill { background: #141a24; border-color: #293242; color: #9aa6b8; }
+.page-heading p, .metric-value span, .metric-foot, .chart-value, .score-copy > span { color: #8a95a7; }
+.button-dark { background: #3169d8; color: #fff; box-shadow: 0 3px 12px #2457bf44; }
+.metric-top, .chart-heading > span:first-child { color: #8792a4; }
+.metric-symbol.down { background: #1a2c48; color: #79a5ff; }
+.metric-symbol.up { background: #1a2c48; color: #79a5ff; }
+.metric-symbol.ping { background: #252433; color: #a5a9c2; }
+.metric-symbol.devices { background: #1d2432; color: #95a8cc; }
+.positive, .score-copy small { color: #78a6ff; }
+.sparkline i { background: #4d8bff; }
+.sparkline.blue i { background: #7398e8; }
+.sparkline.orange i { background: #7e8aa2; }
+.ap-mini i { border-color: #5a8df0; }
+.map-tabs { background: #171d27; }
+.map-tabs button { color: #8995a7; }
+.map-tabs button.selected { background: #252e3d; color: #c5d5ff; box-shadow: none; }
+.approx-label { color: #8a96a8; }
+.approx-label i { background: #548cff; }
+.room-lines { stroke: #9aa6b7; }
+.room-lines .room-dash { stroke: #566275; }
+.room-labels, .map-scale text { fill: #8b97aa; }
+.wall-hints { stroke: #10151e; }
+.ap-range { fill: #5388ed; stroke: #6a9bff; }
+.ap-core { fill: #111a2a; stroke: #6596ff; }
+.ap-marker.secondary .ap-core { stroke: #7395d5; }
+.wifi-icon { stroke: #9bbaff; }
+.wifi-dot { fill: #9bbaff; }
+.ap-marker text, .device-dot text { fill: #aab6c8; }
+.device-dot circle { fill: #88a2d4; }
+.map-scale rect { fill: #8c9bb1; }
+.map-legend { background: #171d27e8; border-color: #303a4a; color: #b2bdcc; }
+.legend-strong { background: #4d8bff; }
+.legend-good { background: #7799d6; }
+.legend-weak { background: #626d80; }
+.map-footer { border-color: #252c39; color: #8692a4; }
+.map-footer .live-dot { background: #5b93ff; box-shadow: 0 0 0 3px #23375c; }
+.map-footer button, .text-button { color: #83aaff; }
+.health-score, .device-row, .ap-row { border-color: #252c39; }
+.score-ring circle { stroke: #26303e; }
+.score-ring .score-progress { stroke: #548cff; }
+.score-ring small { color: #8793a5; }
+.chart-grid { stroke: #293241; }
+.chart-area-fill { fill: url(#chartFill); }
+.chart-line { stroke: #6095ff; }
+.chart-end { stroke: #6095ff; fill: #11151e; }
+.chart-value b { color: #a9c3ff; }
+.chart-x, .chart-y { color: #768296; }
+.insight-note { background: #171f2c; }
+.insight-note > span { background: #223453; color: #8eb0ff; }
+.insight-note p { color: #9aa6b7; }
+.insight-note p strong { color: #d0d9e8; }
+.insight-note button { color: #91b1f7; }
+.device-icon.laptop-icon { background: #1a2740; color: #8eaeef; }
+.device-icon.tv-icon { background: #242733; color: #a0a8b8; }
+.device-icon.phone-icon { background: #1b2638; color: #85a4df; }
+.device-status { color: #9ba7b7; }
+.device-status i, .ap-health i { background: #5792ff; }
+.device-speed b { color: #c8d2e1; }
+.device-speed small, .device-footnote { color: #7f8b9d; }
+.signal-bars i { background: #5b91f2; }
+.signal-bars.medium i:nth-child(4) { background: #323b4a; }
+.ap-symbol { border-color: #2b3545; color: #91aee7; }
+.ap-symbol.main-ap { background: #1b2b45; color: #8aafff; }
+.ap-health { color: #87aefb; }
+.ap-health.warning { color: #a6afbd; }
+.ap-health.warning i { background: #8793a5; }
+.page-footer { color: #687487; }
+.page-footer i { color: #6c9dff; }
+.toast { background: #dce7fa; color: #101827; }
+@media (max-width: 720px) {
+  .map-legend { background: #171d27e8; border-color: #303a4a; }
+}

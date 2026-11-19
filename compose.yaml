@@ -1,0 +1,18 @@
+services:
+  dashboard:
+    build:
+      context: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+  # Add your Java service implementation and build configuration here.
+  # The dashboard is intentionally usable in demo mode before it exists.
+  backend:
+    image: nginx:alpine
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./backend/placeholder:/usr/share/nginx/html:ro
+      - ./backend/placeholder/nginx.conf:/etc/nginx/conf.d/default.conf:ro
