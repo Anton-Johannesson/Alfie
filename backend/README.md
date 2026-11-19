@@ -1,31 +1,59 @@
-# Java backend workspace
+# Alfie Java backend
 
-This folder is reserved for your Java implementation. No Java source or framework has been chosen for you.
+This is a Maven-based Spring Boot REST API skeleton. Java 21 keeps the runtime on an LTS release; Spring Boot 4 manages framework and test dependency versions.
 
-## Suggested responsibilities
+## Structure
 
-- Read measurements exposed by the host or supported by your router/mesh system.
-- Keep hardware-specific integrations behind a small service interface.
-- Expose a stable HTTP API for the dashboard.
-- Clearly report unavailable measurements instead of inventing real network data.
-
-## Proposed API contract
-
-The frontend is configured to use the same-origin `/api` path. Nginx forwards `/api/*` requests to the `backend` Compose service at port `8081`, preserving the `/api` prefix. The current Compose backend is only a placeholder so the dashboard can start before your Java service exists. When you replace it, keep port `8081` inside the container or update the proxy target in `frontend/nginx.conf`.
-
-Suggested endpoints:
-
-### `GET /api/status`
-
-```json
-{
-  "mode": "live",
-  "updatedAt": "2026-11-19T10:30:00Z",
-  "source": "host"
-}
+```text
+src/main/java/dev/alfie/network/
+  AlfieApplication.java     Spring Boot entry point
+  api/                      HTTP controllers
+    dto/                    API request/response records
+  service/                  Use cases and orchestration
+  domain/                   Core network concepts and rules
+  integration/              Host, router, and mesh adapters
+  config/                   Application configuration
+src/main/resources/
+  application.yml           Port and service settings
+src/test/java/dev/alfie/network/
+  AlfieApplicationTests.java JUnit 5 context smoke test
 ```
 
-### `GET /api/measurements/current`
+Keep network-vendor and operating-system details inside `integration/`. Put reusable decisions in `domain/` or `service/`, and keep HTTP types in `api/dto/` so the dashboard contract does not become coupled to a router library.
+
+## Run locally
+
+With Java 21 and Maven installed:
+
+```sh
+mvn test
+mvn spring-boot:run
+```
+
+The service listens on port 8081. Spring Boot Actuator exposes a local health check at [http://localhost:8081/actuator/health](http://localhost:8081/actuator/health).
+
+JUnit Jupiter and Spring test libraries are provided by `spring-boot-starter-test`. Add unit tests beside each package under `src/test/java`; keep hardware dependent checks separate from normal automated tests.
+
+## Run with Docker Compose
+
+From the repository root:
+
+```sh
+docker compose up --build
+```
+
+Compose maps the API to `localhost:8081`. The dashboard's Nginx proxy forwards `/api/*` requests to this service and keeps the `/api` prefix.
+
+## API direction
+
+The frontend currently expects:
+
+- `GET /api/status`
+- `GET /api/measurements/current`
+- `GET /api/devices`
+- Later: `GET /api/measurements/stream` using Server-Sent Events
+
+Example response for `GET /api/measurements/current`:
 
 ```json
 {
@@ -38,9 +66,7 @@ Suggested endpoints:
 }
 ```
 
-Use `null` for a measurement your current platform or router cannot provide.
-
-### `GET /api/devices`
+Use `null` for measurements the current host or router cannot provide. Example `GET /api/devices` response:
 
 ```json
 [
@@ -48,12 +74,4 @@ Use `null` for a measurement your current platform or router cannot provide.
 ]
 ```
 
-Only return devices and traffic details your network equipment can actually identify. A normal client cannot necessarily see all traffic or per-device throughput.
-
-### Optional live updates
-
-Add `GET /api/measurements/stream` as a Server-Sent Events endpoint when you are ready. Events can use the same measurement object as `/api/measurements/current`. The frontend currently requests measurements when the user presses “Run speed test”; periodic refresh or streaming can be added when you implement the API.
-
-## Connecting the dashboard
-
-The browser code in `frontend/src/app.js` has a `DATA_MODE` setting. Keep it as `"demo"` while developing the backend, then change it to `"live"` to request the API. This keeps the demo dashboard useful while the backend is incomplete.
+The Java app currently contains no measurement collection or API endpoints; that part is yours to build.

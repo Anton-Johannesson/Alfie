@@ -25,7 +25,7 @@ You can also open `frontend/index.html` directly while working on the visual int
 
 ## Java backend
 
-The `backend/` folder is intentionally yours to implement. See [backend/README.md](backend/README.md) for the proposed API contract and connection points. The Compose file already reserves port 8081 for the future API service.
+The `backend/` folder contains a Maven and Spring Boot Java 21 skeleton, with JUnit 5 configured. Network measurement collection and API endpoints are yours to implement. See [backend/README.md](backend/README.md) for the package layout and API direction.
 
 ## Current scope
 
